@@ -1,0 +1,22 @@
+# Files excluded from Cloud Build uploads.
+# Without this the .venv directory (thousands of files) gets included.
+
+.gcloudignore
+.git
+.gitignore
+.DS_Store
+
+# Python environment — never needed in the container (Dockerfile installs from requirements.txt)
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Docs and scripts — not needed at runtime
+docs/
+scripts/
+
+# Large non-code assets
+*.docx
+*.pdf

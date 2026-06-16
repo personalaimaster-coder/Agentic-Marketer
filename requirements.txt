@@ -1,0 +1,32 @@
+# ============================================================
+# Marketing Agent — Google ADK + Gemini build
+# Python 3.11+
+# ============================================================
+
+# --- Core: Google Agent Development Kit + Gemini ---
+google-adk>=2.2.0              # multi-agent orchestration framework (Phase 1/2/3)
+google-genai>=1.0.0           # Gemini text + Nano Banana image generation
+
+# --- Google Cloud ecosystem (single-ecosystem consolidation) ---
+google-cloud-firestore>=2.16  # post queue, rules, prompt versions (replaces Supabase DB)
+google-cloud-storage>=2.18    # composited image hosting (replaces Supabase storage)
+google-cloud-secret-manager>=2.20  # credential storage (Telegram/Buffer tokens)
+
+# --- Web server: Telegram webhook + Cloud Scheduler targets ---
+fastapi>=0.115
+uvicorn[standard]>=0.30
+
+# --- HTTP + feeds (the two unavoidable externals: Telegram, Buffer) ---
+httpx>=0.27
+feedparser>=6.0               # Reddit/RSS source ingestion
+
+# --- Models / validation ---
+pydantic>=2.7
+python-dotenv>=1.0
+
+# --- Optional: VectorDB source provider (SOURCE_PROVIDER=vectordb) ---
+# Only needed if you ground the pipeline in a Postgres + pgvector knowledge base.
+# Uncomment to install:
+# cloud-sql-python-connector[pg8000]>=1.9
+# pgvector>=0.3
+# openai>=1.0                  # embeddings (text-embedding-3-small by default)
